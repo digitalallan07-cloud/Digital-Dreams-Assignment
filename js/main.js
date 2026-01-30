@@ -225,8 +225,8 @@
             // Simulate submission
             setTimeout(function () {
                 button.innerHTML = '<span style="display:inline-flex;align-items:center;gap:8px;"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10L8 14L16 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Application Received</span>';
-                button.style.background = 'rgba(0, 200, 150, 0.2)';
-                button.style.color = '#00C896';
+                button.style.background = 'rgba(37, 99, 235, 0.2)';
+                button.style.color = '#2563EB';
 
                 setTimeout(function () {
                     button.innerHTML = originalText;

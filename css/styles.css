@@ -11,12 +11,12 @@
 
 :root {
     --black: #FFFFFF;
-    --white: #1A1A2E;
-    --green: #10B981;
-    --green-dark: #059669;
-    --green-light: #34D399;
-    --gold: #10B981;
-    --gold-light: #34D399;
+    --white: #0F172A;
+    --green: #2563EB;
+    --green-dark: #1D4ED8;
+    --green-light: #3B82F6;
+    --gold: #D4A843;
+    --gold-light: #E0BC5E;
     --navy: #F8FAFC;
     --navy-light: #F1F5F9;
     --slate: #FFFFFF;
@@ -75,7 +75,7 @@ h1, h2, h3, h4, h5 {
     letter-spacing: 0.12em;
     color: var(--gold);
     margin-bottom: 16px;
-    border: 1px solid rgba(16, 185, 129, 0.3);
+    border: 1px solid rgba(212, 168, 67, 0.3);
     padding: 6px 16px;
     border-radius: 100px;
 }
@@ -102,7 +102,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .text-gradient {
-    background: linear-gradient(135deg, #059669, #10B981, #34D399);
+    background: linear-gradient(135deg, #1D4ED8, #2563EB, #3B82F6);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -156,11 +156,11 @@ h1, h2, h3, h4, h5 {
 }
 
 .btn-glow {
-    box-shadow: 0 0 24px rgba(46, 139, 110, 0.3);
+    box-shadow: 0 0 24px rgba(37, 99, 235, 0.3);
 }
 
 .btn-glow:hover {
-    box-shadow: 0 0 40px rgba(46, 139, 110, 0.45);
+    box-shadow: 0 0 40px rgba(37, 99, 235, 0.45);
 }
 
 .btn-nav {
@@ -238,7 +238,7 @@ h1, h2, h3, h4, h5 {
     display: block;
     width: 22px;
     height: 2px;
-    background: #1A1A2E;
+    background: #0F172A;
     border-radius: 2px;
     transition: var(--transition);
 }
@@ -351,8 +351,8 @@ h1, h2, h3, h4, h5 {
 }
 
 @keyframes pulse-dot {
-    0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(46, 139, 110, 0.4); }
-    50% { opacity: 0.8; box-shadow: 0 0 0 6px rgba(0, 200, 150, 0); }
+    0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(212, 168, 67, 0.4); }
+    50% { opacity: 0.8; box-shadow: 0 0 0 6px rgba(212, 168, 67, 0); }
 }
 
 .hero-title {
@@ -430,7 +430,7 @@ h1, h2, h3, h4, h5 {
     font-size: 0.75rem;
     font-weight: 600;
     color: var(--gold);
-    background: rgba(16, 185, 129, 0.12);
+    background: rgba(212, 168, 67, 0.12);
     padding: 4px 12px;
     border-radius: 100px;
 }
@@ -547,7 +547,7 @@ h1, h2, h3, h4, h5 {
 
 .form-input:focus {
     border-color: var(--green);
-    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.12);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
 }
 
 select.form-input {
@@ -583,9 +583,9 @@ select.form-input option {
 }
 
 .solution-card:hover {
-    border-color: rgba(16, 185, 129, 0.4);
+    border-color: rgba(37, 99, 235, 0.4);
     transform: translateY(-4px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08), 0 0 20px rgba(16, 185, 129, 0.08);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08), 0 0 20px rgba(37, 99, 235, 0.08);
 }
 
 .solution-icon {
@@ -594,8 +594,8 @@ select.form-input option {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(16, 185, 129, 0.08);
-    border: 1px solid rgba(16, 185, 129, 0.15);
+    background: rgba(37, 99, 235, 0.08);
+    border: 1px solid rgba(37, 99, 235, 0.15);
     border-radius: 12px;
     margin-bottom: 20px;
 }
@@ -617,7 +617,7 @@ select.form-input option {
     font-size: 0.8rem;
     font-weight: 600;
     color: var(--gold);
-    border: 1px solid rgba(16, 185, 129, 0.2);
+    border: 1px solid rgba(212, 168, 67, 0.2);
     padding: 4px 12px;
     border-radius: 100px;
 }
@@ -790,7 +790,7 @@ select.form-input option {
     font-family: 'Space Grotesk', monospace;
     font-size: 3rem;
     font-weight: 700;
-    color: rgba(16, 185, 129, 0.2);
+    color: rgba(37, 99, 235, 0.2);
     margin-bottom: 16px;
     line-height: 1;
 }
@@ -809,7 +809,7 @@ select.form-input option {
 .process-connector {
     flex: 0 0 60px;
     height: 2px;
-    background: linear-gradient(90deg, rgba(16, 185, 129, 0.3), rgba(46, 139, 110, 0.08));
+    background: linear-gradient(90deg, rgba(37, 99, 235, 0.3), rgba(37, 99, 235, 0.08));
     margin-top: 32px;
 }
 
@@ -1094,7 +1094,7 @@ select.form-input option {
         width: 2px;
         height: 32px;
         flex: 0 0 32px;
-        background: linear-gradient(180deg, rgba(16, 185, 129, 0.3), rgba(46, 139, 110, 0.08));
+        background: linear-gradient(180deg, rgba(37, 99, 235, 0.3), rgba(37, 99, 235, 0.08));
     }
 
     .partners-grid {
