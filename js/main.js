@@ -1,5 +1,6 @@
 /* ========================================
    Digital Dreams — Main JavaScript
+   Enhanced with Financial Animations
    ======================================== */
 
 (function () {
@@ -66,6 +67,20 @@
 
     window.addEventListener('scroll', revealElements, { passive: true });
     window.addEventListener('load', revealElements);
+
+    // --- Stat items visibility (for CSS animations) ---
+    function revealStatItems() {
+        var statItems = document.querySelectorAll('.stat-item');
+        statItems.forEach(function (item) {
+            var rect = item.getBoundingClientRect();
+            if (rect.top < window.innerHeight - 80) {
+                item.classList.add('visible');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', revealStatItems, { passive: true });
+    window.addEventListener('load', revealStatItems);
 
     // --- Count-up animation for stats ---
     var statsCounted = false;
@@ -209,7 +224,47 @@
         });
     }
 
-    // --- Form submissions ---
+    // --- Confetti + dollar sign celebration ---
+    function createConfetti() {
+        var container = document.createElement('div');
+        container.className = 'confetti-container';
+        document.body.appendChild(container);
+
+        var colors = ['#00C896', '#C9A24D', '#10B981', '#3B82F6', '#F59E0B'];
+        var symbols = ['$', 'AED', '$', '$', '$'];
+
+        for (var i = 0; i < 40; i++) {
+            var piece = document.createElement('span');
+            piece.className = 'confetti';
+
+            // Mix confetti shapes and dollar signs
+            if (i % 4 === 0) {
+                piece.textContent = symbols[i % symbols.length];
+                piece.style.fontSize = '14px';
+                piece.style.fontFamily = 'Space Grotesk, monospace';
+                piece.style.fontWeight = '700';
+                piece.style.color = colors[i % colors.length];
+                piece.style.width = 'auto';
+                piece.style.height = 'auto';
+            } else {
+                piece.style.background = colors[i % colors.length];
+                piece.style.borderRadius = i % 2 === 0 ? '50%' : '2px';
+                piece.style.width = (6 + Math.random() * 8) + 'px';
+                piece.style.height = (6 + Math.random() * 8) + 'px';
+            }
+
+            piece.style.left = Math.random() * 100 + '%';
+            piece.style.animationDelay = Math.random() * 1 + 's';
+            piece.style.animationDuration = (2 + Math.random() * 2) + 's';
+            container.appendChild(piece);
+        }
+
+        setTimeout(function () {
+            container.remove();
+        }, 4000);
+    }
+
+    // --- Form submissions with confetti ---
     function handleFormSubmit(formId) {
         var form = document.getElementById(formId);
         if (!form) return;
@@ -224,9 +279,12 @@
 
             // Simulate submission
             setTimeout(function () {
-                button.innerHTML = '<span style="display:inline-flex;align-items:center;gap:8px;"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10L8 14L16 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Application Received</span>';
-                button.style.background = 'rgba(37, 99, 235, 0.2)';
-                button.style.color = '#2563EB';
+                button.innerHTML = '<span style="display:inline-flex;align-items:center;gap:8px;"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10L8 14L16 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Application Received!</span>';
+                button.style.background = '#10B981';
+                button.style.color = '#FFFFFF';
+
+                // Launch confetti
+                createConfetti();
 
                 setTimeout(function () {
                     button.innerHTML = originalText;
