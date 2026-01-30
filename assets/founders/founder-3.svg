@@ -2,8 +2,8 @@
 <rect width="340" height="200" fill="#1C1F26"/>
 <circle cx="170" cy="85" r="45" fill="#2A2D35"/>
 <circle cx="170" cy="85" r="35" fill="#3A3D45"/>
-<path d="M170 75C163.4 75 158 80.4 158 87C158 93.6 163.4 99 170 99C176.6 99 182 93.6 182 87C182 80.4 176.6 75 170 75Z" fill="#00C896" opacity="0.5"/>
-<circle cx="170" cy="70" r="12" fill="#00C896" opacity="0.5"/>
-<rect x="100" y="160" width="140" height="4" rx="2" fill="#00C896" opacity="0.3"/>
+<path d="M170 75C163.4 75 158 80.4 158 87C158 93.6 163.4 99 170 99C176.6 99 182 93.6 182 87C182 80.4 176.6 75 170 75Z" fill="#2563EB" opacity="0.5"/>
+<circle cx="170" cy="70" r="12" fill="#2563EB" opacity="0.5"/>
+<rect x="100" y="160" width="140" height="4" rx="2" fill="#2563EB" opacity="0.3"/>
 <text x="170" y="145" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#9AA4B2">Sara Mahmoud</text>
 </svg>
