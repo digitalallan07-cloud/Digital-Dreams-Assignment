@@ -1,5 +1,6 @@
 /* ========================================
    Digital Dreams — Premium Landing Page
+   Mixed Dark/White Theme with Financial Animations
    ======================================== */
 
 /* --- Reset & Base --- */
@@ -12,12 +13,19 @@
 :root {
     --black: #0B0E11;
     --white: #F5F7FA;
+    --pure-white: #FFFFFF;
+    --light-bg: #F8F9FA;
+    --light-alt: #F1F3F5;
     --green: #00C896;
     --green-dark: #00A87D;
+    --green-light: #10B981;
     --gold: #C9A24D;
     --slate: #1C1F26;
     --grey: #9AA4B2;
     --grey-dark: #6B7280;
+    --grey-light: #E5E7EB;
+    --dark-text: #1A1D23;
+    --dark-text-secondary: #4B5563;
     --radius: 14px;
     --radius-sm: 8px;
     --max-width: 1260px;
@@ -54,6 +62,34 @@ ul { list-style: none; }
     max-width: var(--max-width);
     margin: 0 auto;
     padding: 0 24px;
+}
+
+/* --- Light Section Overrides --- */
+.section-light {
+    background: var(--pure-white);
+    color: var(--dark-text);
+}
+
+.section-light-alt {
+    background: var(--light-bg);
+    color: var(--dark-text);
+}
+
+.section-light .section-title,
+.section-light-alt .section-title {
+    color: var(--dark-text);
+}
+
+.section-light .section-subtitle,
+.section-light-alt .section-subtitle {
+    color: var(--dark-text-secondary);
+}
+
+.section-light .section-label,
+.section-light-alt .section-label {
+    color: var(--green);
+    border-color: rgba(0, 200, 150, 0.3);
+    background: rgba(0, 200, 150, 0.06);
 }
 
 /* --- Typography --- */
@@ -162,6 +198,30 @@ h1, h2, h3, h4, h5 {
 .btn-nav {
     padding: 10px 22px;
     font-size: 0.875rem;
+}
+
+/* Submit button pulse animation */
+.btn-submit-animate {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-submit-animate::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+}
+
+.btn-submit-animate:hover::after {
+    width: 300px;
+    height: 300px;
 }
 
 /* --- Navbar --- */
@@ -307,6 +367,51 @@ h1, h2, h3, h4, h5 {
     -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
 }
 
+/* Floating dollar signs in hero */
+.floating-symbols {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.float-symbol {
+    position: absolute;
+    font-family: 'Space Grotesk', monospace;
+    font-weight: 700;
+    color: var(--green);
+    opacity: 0;
+    animation: floatUp 6s ease-in-out infinite;
+}
+
+.float-1 { left: 10%; font-size: 1.2rem; animation-delay: 0s; }
+.float-2 { left: 25%; font-size: 0.8rem; animation-delay: 1.2s; }
+.float-3 { left: 55%; font-size: 1rem; animation-delay: 2.4s; }
+.float-4 { left: 75%; font-size: 1.4rem; animation-delay: 3.6s; }
+.float-5 { left: 90%; font-size: 0.7rem; animation-delay: 4.8s; }
+
+@keyframes floatUp {
+    0% {
+        bottom: -40px;
+        opacity: 0;
+        transform: translateX(0) rotate(0deg);
+    }
+    10% {
+        opacity: 0.15;
+    }
+    50% {
+        opacity: 0.1;
+    }
+    90% {
+        opacity: 0.05;
+    }
+    100% {
+        bottom: 100%;
+        opacity: 0;
+        transform: translateX(20px) rotate(15deg);
+    }
+}
+
 .hero-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -392,6 +497,11 @@ h1, h2, h3, h4, h5 {
     transition: var(--transition);
 }
 
+.hero-card:hover {
+    border-color: rgba(0, 200, 150, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 200, 150, 0.1);
+}
+
 .hero-card-1 {
     top: 20px;
     left: 0;
@@ -455,6 +565,17 @@ h1, h2, h3, h4, h5 {
 .mini-chart svg {
     width: 100%;
     height: 40px;
+}
+
+/* Chart line draw animation */
+.chart-line {
+    stroke-dasharray: 200;
+    stroke-dashoffset: 200;
+    animation: drawChart 2s ease forwards 0.5s;
+}
+
+@keyframes drawChart {
+    to { stroke-dashoffset: 0; }
 }
 
 .mini-chart-label {
@@ -548,7 +669,40 @@ select.form-input option {
     color: var(--white);
 }
 
-/* --- Solutions --- */
+/* Light section form overrides */
+.section-light .form-input {
+    background: var(--pure-white);
+    border-color: var(--grey-light);
+    color: var(--dark-text);
+}
+
+.section-light .form-input::placeholder {
+    color: var(--grey);
+}
+
+.section-light .form-input:focus {
+    border-color: var(--green);
+    box-shadow: 0 0 0 3px rgba(0, 200, 150, 0.1);
+}
+
+.section-light select.form-input option {
+    background: var(--pure-white);
+    color: var(--dark-text);
+}
+
+.section-light .form-group label {
+    color: var(--dark-text-secondary);
+}
+
+.section-light .form-disclaimer {
+    color: var(--grey);
+}
+
+.section-light .form-disclaimer a {
+    color: var(--dark-text-secondary);
+}
+
+/* --- Solutions (White section) --- */
 .solutions {
     padding: 120px 0;
 }
@@ -560,17 +714,30 @@ select.form-input option {
 }
 
 .solution-card {
-    background: var(--slate);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: var(--pure-white);
+    border: 1px solid var(--grey-light);
     border-radius: var(--radius);
     padding: 32px 28px;
     transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.section-light .solution-card {
+    background: var(--light-bg);
+    border-color: var(--grey-light);
 }
 
 .solution-card:hover {
-    border-color: rgba(0, 200, 150, 0.2);
+    border-color: rgba(0, 200, 150, 0.4);
     transform: translateY(-4px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* Floating dollar on card hover */
+.solution-card:hover .icon-currency {
+    opacity: 1;
+    transform: translateY(-8px);
 }
 
 .solution-icon {
@@ -582,16 +749,31 @@ select.form-input option {
     background: rgba(0, 200, 150, 0.08);
     border-radius: 12px;
     margin-bottom: 20px;
+    position: relative;
+}
+
+.icon-currency {
+    position: absolute;
+    top: -4px;
+    right: -8px;
+    font-family: 'Space Grotesk', monospace;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--green);
+    opacity: 0;
+    transform: translateY(0);
+    transition: all 0.4s ease;
 }
 
 .solution-card h3 {
     font-size: 1.1rem;
     margin-bottom: 10px;
+    color: var(--dark-text);
 }
 
 .solution-card p {
     font-size: 0.9rem;
-    color: var(--grey);
+    color: var(--dark-text-secondary);
     line-height: 1.6;
     margin-bottom: 16px;
 }
@@ -601,16 +783,18 @@ select.form-input option {
     font-size: 0.8rem;
     font-weight: 600;
     color: var(--gold);
-    border: 1px solid rgba(201, 162, 77, 0.2);
+    border: 1px solid rgba(201, 162, 77, 0.25);
     padding: 4px 12px;
     border-radius: 100px;
+    background: rgba(201, 162, 77, 0.06);
 }
 
-/* --- Stats --- */
+/* --- Stats (Dark section with animated icons) --- */
 .stats {
-    padding: 80px 0;
+    padding: 100px 0;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
 }
 
 .stats-grid {
@@ -623,6 +807,120 @@ select.form-input option {
 
 .stat-item {
     text-align: center;
+}
+
+.stat-icon-wrap {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    margin-bottom: 16px;
+}
+
+.stat-icon {
+    opacity: 0.8;
+}
+
+/* Floating $ symbols on AED funded stat */
+.stat-float-symbols {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.stat-float-symbols span {
+    position: absolute;
+    font-family: 'Space Grotesk', monospace;
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: var(--green);
+    opacity: 0;
+}
+
+.stat-item.visible .stat-float-symbols span:nth-child(1) {
+    animation: statFloat 2.5s ease-in-out 0.5s infinite;
+    left: -8px;
+    top: 10px;
+}
+
+.stat-item.visible .stat-float-symbols span:nth-child(2) {
+    animation: statFloat 2.5s ease-in-out 1.2s infinite;
+    right: -8px;
+    top: 5px;
+}
+
+.stat-item.visible .stat-float-symbols span:nth-child(3) {
+    animation: statFloat 2.5s ease-in-out 1.8s infinite;
+    left: 50%;
+    top: -5px;
+}
+
+@keyframes statFloat {
+    0% { opacity: 0; transform: translateY(0); }
+    30% { opacity: 0.6; }
+    100% { opacity: 0; transform: translateY(-20px); }
+}
+
+/* Check mark animation with green pulse */
+.check-circle {
+    stroke-dasharray: 76;
+    stroke-dashoffset: 76;
+}
+
+.stat-item.visible .check-circle {
+    animation: drawCircle 1s ease forwards 0.3s;
+}
+
+@keyframes drawCircle {
+    to { stroke-dashoffset: 0; }
+}
+
+.check-mark {
+    stroke-dasharray: 24;
+    stroke-dashoffset: 24;
+}
+
+.stat-item.visible .check-mark {
+    animation: drawCheck 0.5s ease forwards 1s;
+}
+
+@keyframes drawCheck {
+    to { stroke-dashoffset: 0; }
+}
+
+.check-pulse {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 2px solid var(--green);
+    opacity: 0;
+}
+
+.stat-item.visible .check-pulse {
+    animation: pulseExpand 2s ease-in-out 1.5s infinite;
+}
+
+@keyframes pulseExpand {
+    0% { width: 32px; height: 32px; opacity: 0.4; }
+    100% { width: 56px; height: 56px; opacity: 0; }
+}
+
+/* Clock hand rotation */
+.clock-hand {
+    transform-origin: 16px 16px;
+}
+
+.stat-item.visible .clock-hand {
+    animation: rotateClock 3s linear infinite;
+}
+
+@keyframes rotateClock {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
 
 .stat-number {
@@ -653,7 +951,7 @@ select.form-input option {
     background: rgba(255, 255, 255, 0.08);
 }
 
-/* --- Founders Slider --- */
+/* --- Founders Slider (White section) --- */
 .founders {
     padding: 120px 0;
     overflow: hidden;
@@ -680,23 +978,27 @@ select.form-input option {
 
 .founder-card {
     flex: 0 0 340px;
-    background: var(--slate);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: var(--pure-white);
+    border: 1px solid var(--grey-light);
     border-radius: var(--radius);
     overflow: hidden;
     transition: transform 0.4s ease, box-shadow 0.4s ease;
     user-select: none;
 }
 
+.section-light .founder-card {
+    background: var(--light-bg);
+}
+
 .founder-card:hover {
     transform: scale(1.03);
-    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1);
 }
 
 .founder-photo {
     width: 100%;
     height: 200px;
-    background: rgba(255, 255, 255, 0.03);
+    background: var(--grey-light);
     overflow: hidden;
 }
 
@@ -713,11 +1015,12 @@ select.form-input option {
 .founder-name {
     font-size: 1.1rem;
     margin-bottom: 4px;
+    color: var(--dark-text);
 }
 
 .founder-company {
     font-size: 0.85rem;
-    color: var(--grey);
+    color: var(--dark-text-secondary);
     margin-bottom: 14px;
 }
 
@@ -730,7 +1033,7 @@ select.form-input option {
 
 .funding-label {
     font-size: 0.75rem;
-    color: var(--grey);
+    color: var(--dark-text-secondary);
     text-transform: uppercase;
     letter-spacing: 0.05em;
 }
@@ -744,17 +1047,16 @@ select.form-input option {
 
 .founder-quote {
     font-size: 0.85rem;
-    color: var(--grey);
+    color: var(--dark-text-secondary);
     font-style: italic;
     line-height: 1.6;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid var(--grey-light);
     padding-top: 14px;
 }
 
-/* --- Process --- */
+/* --- Process (Light gray section) --- */
 .process {
     padding: 120px 0;
-    background: var(--slate);
 }
 
 .process-grid {
@@ -774,9 +1076,13 @@ select.form-input option {
     font-family: 'Space Grotesk', monospace;
     font-size: 3rem;
     font-weight: 700;
-    color: rgba(0, 200, 150, 0.15);
+    color: rgba(0, 200, 150, 0.2);
     margin-bottom: 16px;
     line-height: 1;
+}
+
+.section-light-alt .process-step h3 {
+    color: var(--dark-text);
 }
 
 .process-step h3 {
@@ -786,18 +1092,18 @@ select.form-input option {
 
 .process-step p {
     font-size: 0.9rem;
-    color: var(--grey);
+    color: var(--dark-text-secondary);
     line-height: 1.6;
 }
 
 .process-connector {
     flex: 0 0 60px;
     height: 2px;
-    background: linear-gradient(90deg, rgba(0, 200, 150, 0.3), rgba(0, 200, 150, 0.05));
+    background: linear-gradient(90deg, rgba(0, 200, 150, 0.4), rgba(0, 200, 150, 0.1));
     margin-top: 32px;
 }
 
-/* --- Partners --- */
+/* --- Partners (Dark section) --- */
 .partners {
     padding: 100px 0;
 }
@@ -830,10 +1136,9 @@ select.form-input option {
     height: 40px;
 }
 
-/* --- Apply Form --- */
+/* --- Apply Form (White section) --- */
 .apply {
     padding: 120px 0;
-    background: var(--slate);
 }
 
 .apply-wrapper {
@@ -859,12 +1164,12 @@ select.form-input option {
     align-items: center;
     gap: 12px;
     font-size: 0.9rem;
-    color: var(--grey);
+    color: var(--dark-text-secondary);
 }
 
 .apply-form-wrapper {
-    background: var(--black);
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: var(--light-bg);
+    border: 1px solid var(--grey-light);
     border-radius: var(--radius);
     padding: 40px;
 }
@@ -905,6 +1210,23 @@ select.form-input option {
 .form-disclaimer a {
     color: var(--grey);
     text-decoration: underline;
+}
+
+/* --- Section Transitions (shadow between dark/light) --- */
+.section-light,
+.section-light-alt {
+    position: relative;
+}
+
+.section-light::before,
+.section-light-alt::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(0, 200, 150, 0.2), transparent);
 }
 
 /* --- Footer --- */
@@ -985,6 +1307,31 @@ select.form-input option {
 [data-animate].visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* --- Confetti for form success --- */
+.confetti-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    overflow: hidden;
+}
+
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: -10px;
+    animation: confettiFall 3s ease-in forwards;
+}
+
+@keyframes confettiFall {
+    0% { top: -10px; opacity: 1; }
+    100% { top: 110vh; opacity: 0; transform: rotate(720deg); }
 }
 
 /* --- Responsive --- */
@@ -1097,5 +1444,9 @@ select.form-input option {
         flex-direction: column;
         gap: 16px;
         text-align: center;
+    }
+
+    .floating-symbols {
+        display: none;
     }
 }
