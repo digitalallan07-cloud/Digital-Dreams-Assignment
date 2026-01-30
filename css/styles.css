@@ -10,18 +10,18 @@
 }
 
 :root {
-    --black: #0A0F1A;
-    --white: #F0F2F5;
-    --green: #2E8B6E;
-    --green-dark: #24705A;
-    --green-light: #3DA882;
-    --gold: #D4A843;
-    --gold-light: #E8C36A;
-    --navy: #1B2A4A;
-    --navy-light: #263B63;
-    --slate: #111827;
-    --grey: #94A3B8;
-    --grey-dark: #64748B;
+    --black: #FFFFFF;
+    --white: #1A1A2E;
+    --green: #10B981;
+    --green-dark: #059669;
+    --green-light: #34D399;
+    --gold: #10B981;
+    --gold-light: #34D399;
+    --navy: #F8FAFC;
+    --navy-light: #F1F5F9;
+    --slate: #FFFFFF;
+    --grey: #64748B;
+    --grey-dark: #94A3B8;
     --radius: 14px;
     --radius-sm: 8px;
     --max-width: 1260px;
@@ -75,7 +75,7 @@ h1, h2, h3, h4, h5 {
     letter-spacing: 0.12em;
     color: var(--gold);
     margin-bottom: 16px;
-    border: 1px solid rgba(212, 168, 67, 0.3);
+    border: 1px solid rgba(16, 185, 129, 0.3);
     padding: 6px 16px;
     border-radius: 100px;
 }
@@ -102,7 +102,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .text-gradient {
-    background: linear-gradient(135deg, var(--navy-light), var(--green-light), var(--gold));
+    background: linear-gradient(135deg, #059669, #10B981, #34D399);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -126,7 +126,7 @@ h1, h2, h3, h4, h5 {
 
 .btn-primary {
     background: linear-gradient(135deg, var(--green) 0%, var(--green-dark) 100%);
-    color: var(--white);
+    color: #FFFFFF;
 }
 
 .btn-primary:hover {
@@ -137,12 +137,12 @@ h1, h2, h3, h4, h5 {
 .btn-ghost {
     background: transparent;
     color: var(--grey);
-    border: 1px solid rgba(154, 164, 178, 0.2);
+    border: 1px solid #CBD5E1;
 }
 
 .btn-ghost:hover {
     color: var(--white);
-    border-color: rgba(154, 164, 178, 0.4);
+    border-color: #94A3B8;
 }
 
 .btn-lg {
@@ -181,10 +181,10 @@ h1, h2, h3, h4, h5 {
 }
 
 .navbar.scrolled {
-    background: rgba(10, 15, 26, 0.9);
+    background: rgba(0, 0, 0, 0.95);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     padding: 12px 0;
 }
 
@@ -238,7 +238,7 @@ h1, h2, h3, h4, h5 {
     display: block;
     width: 22px;
     height: 2px;
-    background: var(--white);
+    background: #1A1A2E;
     border-radius: 2px;
     transition: var(--transition);
 }
@@ -295,7 +295,7 @@ h1, h2, h3, h4, h5 {
 .hero-glow-2 {
     width: 400px;
     height: 400px;
-    background: var(--gold);
+    background: var(--green);
     bottom: -100px;
     left: -100px;
     opacity: 0.06;
@@ -314,8 +314,8 @@ h1, h2, h3, h4, h5 {
     position: absolute;
     inset: 0;
     background-image:
-        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+        linear-gradient(rgba(0, 0, 0, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
     background-size: 64px 64px;
     mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
     -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
@@ -336,10 +336,10 @@ h1, h2, h3, h4, h5 {
     font-weight: 500;
     color: var(--grey);
     margin-bottom: 24px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid #E2E8F0;
     padding: 8px 18px;
     border-radius: 100px;
-    background: rgba(255, 255, 255, 0.03);
+    background: #F8FAFC;
 }
 
 .badge-dot {
@@ -399,11 +399,12 @@ h1, h2, h3, h4, h5 {
 
 .hero-card {
     position: absolute;
-    background: var(--slate);
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
     border-radius: var(--radius);
     padding: 24px;
     transition: var(--transition);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
 }
 
 .hero-card-1 {
@@ -429,7 +430,7 @@ h1, h2, h3, h4, h5 {
     font-size: 0.75rem;
     font-weight: 600;
     color: var(--gold);
-    background: rgba(212, 168, 67, 0.12);
+    background: rgba(16, 185, 129, 0.12);
     padding: 4px 12px;
     border-radius: 100px;
 }
@@ -494,8 +495,8 @@ h1, h2, h3, h4, h5 {
 }
 
 .quick-apply-card {
-    background: var(--slate);
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
     border-radius: var(--radius);
     padding: 40px 48px;
     display: flex;
@@ -531,10 +532,10 @@ h1, h2, h3, h4, h5 {
     font-family: inherit;
     font-size: 0.9rem;
     padding: 14px 18px;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
     border-radius: var(--radius-sm);
-    color: var(--white);
+    color: #1A1A2E;
     outline: none;
     transition: var(--transition);
     width: 100%;
@@ -545,8 +546,8 @@ h1, h2, h3, h4, h5 {
 }
 
 .form-input:focus {
-    border-color: var(--gold);
-    box-shadow: 0 0 0 3px rgba(212, 168, 67, 0.12);
+    border-color: var(--green);
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.12);
 }
 
 select.form-input {
@@ -558,8 +559,8 @@ select.form-input {
 }
 
 select.form-input option {
-    background: var(--slate);
-    color: var(--white);
+    background: #FFFFFF;
+    color: #1A1A2E;
 }
 
 /* --- Solutions --- */
@@ -574,17 +575,17 @@ select.form-input option {
 }
 
 .solution-card {
-    background: var(--slate);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
     border-radius: var(--radius);
     padding: 32px 28px;
     transition: var(--transition);
 }
 
 .solution-card:hover {
-    border-color: rgba(212, 168, 67, 0.25);
+    border-color: rgba(16, 185, 129, 0.4);
     transform: translateY(-4px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(27, 42, 74, 0.15);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08), 0 0 20px rgba(16, 185, 129, 0.08);
 }
 
 .solution-icon {
@@ -593,8 +594,8 @@ select.form-input option {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(27, 42, 74, 0.5);
-    border: 1px solid rgba(46, 139, 110, 0.15);
+    background: rgba(16, 185, 129, 0.08);
+    border: 1px solid rgba(16, 185, 129, 0.15);
     border-radius: 12px;
     margin-bottom: 20px;
 }
@@ -616,7 +617,7 @@ select.form-input option {
     font-size: 0.8rem;
     font-weight: 600;
     color: var(--gold);
-    border: 1px solid rgba(201, 162, 77, 0.2);
+    border: 1px solid rgba(16, 185, 129, 0.2);
     padding: 4px 12px;
     border-radius: 100px;
 }
@@ -624,8 +625,8 @@ select.form-input option {
 /* --- Stats --- */
 .stats {
     padding: 80px 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid #E2E8F0;
+    border-bottom: 1px solid #E2E8F0;
 }
 
 .stats-grid {
@@ -665,7 +666,7 @@ select.form-input option {
 .stat-divider {
     width: 1px;
     height: 48px;
-    background: rgba(255, 255, 255, 0.08);
+    background: #E2E8F0;
 }
 
 /* --- Founders Slider --- */
@@ -695,8 +696,8 @@ select.form-input option {
 
 .founder-card {
     flex: 0 0 340px;
-    background: var(--slate);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
     border-radius: var(--radius);
     overflow: hidden;
     transition: transform 0.4s ease, box-shadow 0.4s ease;
@@ -705,13 +706,13 @@ select.form-input option {
 
 .founder-card:hover {
     transform: scale(1.03);
-    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1);
 }
 
 .founder-photo {
     width: 100%;
     height: 200px;
-    background: rgba(255, 255, 255, 0.03);
+    background: #F1F5F9;
     overflow: hidden;
 }
 
@@ -762,14 +763,14 @@ select.form-input option {
     color: var(--grey);
     font-style: italic;
     line-height: 1.6;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid #E2E8F0;
     padding-top: 14px;
 }
 
 /* --- Process --- */
 .process {
     padding: 120px 0;
-    background: linear-gradient(135deg, var(--slate) 0%, var(--navy) 50%, var(--slate) 100%);
+    background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 50%, #F8FAFC 100%);
 }
 
 .process-grid {
@@ -789,7 +790,7 @@ select.form-input option {
     font-family: 'Space Grotesk', monospace;
     font-size: 3rem;
     font-weight: 700;
-    color: rgba(212, 168, 67, 0.2);
+    color: rgba(16, 185, 129, 0.2);
     margin-bottom: 16px;
     line-height: 1;
 }
@@ -808,7 +809,7 @@ select.form-input option {
 .process-connector {
     flex: 0 0 60px;
     height: 2px;
-    background: linear-gradient(90deg, rgba(212, 168, 67, 0.3), rgba(46, 139, 110, 0.08));
+    background: linear-gradient(90deg, rgba(16, 185, 129, 0.3), rgba(46, 139, 110, 0.08));
     margin-top: 32px;
 }
 
@@ -829,7 +830,7 @@ select.form-input option {
     align-items: center;
     justify-content: center;
     padding: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid #E2E8F0;
     border-radius: var(--radius-sm);
     opacity: 0.6;
     transition: var(--transition);
@@ -837,7 +838,7 @@ select.form-input option {
 
 .partner-logo:hover {
     opacity: 1;
-    border-color: rgba(255, 255, 255, 0.1);
+    border-color: #CBD5E1;
 }
 
 .partner-logo svg {
@@ -848,7 +849,7 @@ select.form-input option {
 /* --- Apply Form --- */
 .apply {
     padding: 120px 0;
-    background: linear-gradient(180deg, var(--slate) 0%, rgba(27, 42, 74, 0.3) 50%, var(--slate) 100%);
+    background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 50%, #FFFFFF 100%);
 }
 
 .apply-wrapper {
@@ -878,8 +879,8 @@ select.form-input option {
 }
 
 .apply-form-wrapper {
-    background: var(--black);
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
     border-radius: var(--radius);
     padding: 40px;
 }
@@ -925,7 +926,7 @@ select.form-input option {
 /* --- Footer --- */
 .footer {
     padding: 80px 0 40px;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid #E2E8F0;
 }
 
 .footer-grid {
@@ -967,7 +968,7 @@ select.form-input option {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid #E2E8F0;
     padding-top: 32px;
 }
 
@@ -1093,7 +1094,7 @@ select.form-input option {
         width: 2px;
         height: 32px;
         flex: 0 0 32px;
-        background: linear-gradient(180deg, rgba(212, 168, 67, 0.3), rgba(46, 139, 110, 0.08));
+        background: linear-gradient(180deg, rgba(16, 185, 129, 0.3), rgba(46, 139, 110, 0.08));
     }
 
     .partners-grid {
