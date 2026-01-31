@@ -300,4 +300,74 @@
     handleFormSubmit('quickApplyForm');
     handleFormSubmit('applyForm');
 
+    // --- Partners marquee: clone items for seamless loop ---
+    var partnersTrack = document.getElementById('partnersTrack');
+    if (partnersTrack) {
+        partnersTrack.innerHTML += partnersTrack.innerHTML;
+    }
+
+    // --- Tilt effect on solution cards ---
+    var solutionCards = document.querySelectorAll('.solution-card');
+    solutionCards.forEach(function (card) {
+        card.addEventListener('mousemove', function (e) {
+            var rect = card.getBoundingClientRect();
+            var x = (e.clientX - rect.left) / rect.width - 0.5;
+            var y = (e.clientY - rect.top) / rect.height - 0.5;
+            card.style.transform = 'translateY(-4px) perspective(600px) rotateY(' + (x * 8) + 'deg) rotateX(' + (-y * 8) + 'deg)';
+        });
+        card.addEventListener('mouseleave', function () {
+            card.style.transform = '';
+        });
+    });
+
+    // --- Typed text effect on hero subtitle ---
+    var heroSubtitle = document.querySelector('.solution-statement');
+    if (heroSubtitle) {
+        var fullText = heroSubtitle.textContent;
+        heroSubtitle.textContent = '';
+        heroSubtitle.style.borderRight = '2px solid var(--green)';
+        var charIndex = 0;
+        var typingObserver = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting && charIndex === 0) {
+                    var typeInterval = setInterval(function () {
+                        heroSubtitle.textContent = fullText.slice(0, charIndex + 1);
+                        charIndex++;
+                        if (charIndex >= fullText.length) {
+                            clearInterval(typeInterval);
+                            setTimeout(function () {
+                                heroSubtitle.style.borderRight = 'none';
+                            }, 600);
+                        }
+                    }, 25);
+                    typingObserver.disconnect();
+                }
+            });
+        }, { threshold: 0.5 });
+        typingObserver.observe(heroSubtitle);
+    }
+
+    // --- Active nav link highlight on scroll ---
+    var sections = document.querySelectorAll('section[id]');
+    var navAnchors = document.querySelectorAll('.nav-links a');
+
+    function highlightNav() {
+        var scrollY = window.scrollY + 120;
+        sections.forEach(function (section) {
+            var top = section.offsetTop;
+            var height = section.offsetHeight;
+            var id = section.getAttribute('id');
+            if (scrollY >= top && scrollY < top + height) {
+                navAnchors.forEach(function (a) {
+                    a.style.color = '';
+                    if (a.getAttribute('href') === '#' + id) {
+                        a.style.color = '#00C896';
+                    }
+                });
+            }
+        });
+    }
+
+    window.addEventListener('scroll', highlightNav, { passive: true });
+
 })();
