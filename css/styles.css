@@ -1492,4 +1492,149 @@ select.form-input option {
     .floating-symbols {
         display: none;
     }
+
+    .sticky-mobile-ctas {
+        display: flex !important;
+    }
+}
+
+/* --- Pain → Solution Section --- */
+.pain-solution {
+    padding: 80px 0;
+    background: var(--black);
+}
+
+.pain-solution-content {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.pain-solution .section-title {
+    margin-bottom: 32px;
+}
+
+.pain-points {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 32px;
+    text-align: left;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pain-points li {
+    position: relative;
+    padding-left: 28px;
+    font-size: 1rem;
+    color: var(--grey);
+    line-height: 1.6;
+}
+
+.pain-points li::before {
+    content: '×';
+    position: absolute;
+    left: 0;
+    color: #ef4444;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.solution-statement {
+    font-size: 1.1rem;
+    color: var(--green);
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+/* --- Hero Video --- */
+.hero-video-wrapper {
+    margin-bottom: 20px;
+    border-radius: var(--radius);
+    overflow: hidden;
+    max-width: 280px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-video-wrapper .Sirv {
+    width: 100%;
+    aspect-ratio: 9/16;
+}
+
+/* --- Video Reinforcement --- */
+.video-reinforcement {
+    padding: 60px 0;
+    background: var(--light-bg);
+}
+
+.video-reinforcement-wrapper {
+    max-width: 360px;
+    margin: 0 auto;
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+.video-reinforcement-wrapper .Sirv {
+    width: 100%;
+    aspect-ratio: 9/16;
+}
+
+/* --- Form Reassurance --- */
+.form-reassurance {
+    font-size: 0.8rem;
+    color: var(--green-on-light);
+    text-align: center;
+    margin-top: 8px;
+    font-weight: 500;
+}
+
+/* --- Sticky Mobile CTAs --- */
+.sticky-mobile-ctas {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    gap: 0;
+    background: var(--black);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-sticky {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 16px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 0;
+    border: none;
+}
+
+.btn-whatsapp {
+    background: #25D366;
+    color: #fff;
+}
+
+.btn-whatsapp:hover {
+    background: #1fb855;
+    color: #fff;
+}
+
+.btn-call {
+    background: var(--green);
+    color: var(--black);
+}
+
+.btn-call:hover {
+    background: var(--green-dark);
+    color: var(--black);
 }
