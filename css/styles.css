@@ -19,6 +19,7 @@
     --green: #00C896;
     --green-dark: #00A87D;
     --green-light: #10B981;
+    --green-on-light: #059669;
     --gold: #C9A24D;
     --slate: #1C1F26;
     --grey: #9AA4B2;
@@ -87,9 +88,51 @@ ul { list-style: none; }
 
 .section-light .section-label,
 .section-light-alt .section-label {
-    color: var(--green);
-    border-color: rgba(0, 200, 150, 0.3);
-    background: rgba(0, 200, 150, 0.06);
+    color: var(--green-on-light);
+    border-color: rgba(5, 150, 105, 0.3);
+    background: rgba(5, 150, 105, 0.06);
+}
+
+/* Green text on light backgrounds — darker for readability */
+.section-light .funding-amount,
+.section-light-alt .funding-amount,
+.section-light .icon-currency,
+.section-light-alt .icon-currency,
+.section-light .solution-icon svg path,
+.section-light-alt .solution-icon svg path {
+    color: var(--green-on-light);
+}
+
+.section-light .solution-icon svg path,
+.section-light-alt .solution-icon svg path {
+    stroke: var(--green-on-light);
+}
+
+.section-light .solution-icon,
+.section-light-alt .solution-icon {
+    background: rgba(5, 150, 105, 0.1);
+}
+
+.section-light .solution-card:hover,
+.section-light-alt .solution-card:hover {
+    border-color: rgba(5, 150, 105, 0.4);
+}
+
+.section-light .solution-range,
+.section-light-alt .solution-range {
+    color: #92710A;
+    border-color: rgba(146, 113, 10, 0.25);
+    background: rgba(146, 113, 10, 0.06);
+}
+
+.section-light .process-number,
+.section-light-alt .process-number {
+    color: rgba(5, 150, 105, 0.25);
+}
+
+.section-light .process-connector,
+.section-light-alt .process-connector {
+    background: linear-gradient(90deg, rgba(5, 150, 105, 0.4), rgba(5, 150, 105, 0.1));
 }
 
 /* --- Typography --- */
